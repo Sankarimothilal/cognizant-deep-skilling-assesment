@@ -1,0 +1,43 @@
+package com.example.demo.controller;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.example.demo.entity.Book;
+import com.example.demo.repository.BookRepository;
+
+@RestController
+@RequestMapping("/books")
+public class BookController {
+
+    @Autowired
+    private BookRepository repository;
+
+    @PostMapping
+    public Book addBook(@RequestBody Book book) {
+        return repository.save(book);
+    }
+
+    @GetMapping
+    public List<Book> getAllBooks() {
+        return repository.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Book getBook(@PathVariable int id) {
+        return repository.findById(id).orElse(null);
+    }
+
+    @PutMapping("/{id}")
+    public Book updateBook(@PathVariable int id, @RequestBody Book book) {
+        book.setId(id);
+        return repository.save(book);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteBook(@PathVariable int id) {
+        repository.deleteById(id);
+        return "Book deleted successfully";
+    }
+}
