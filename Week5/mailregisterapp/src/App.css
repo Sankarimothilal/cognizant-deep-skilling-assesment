@@ -1,0 +1,20 @@
+.container {
+  text-align: center;
+  margin-top: 80px;
+}
+
+h1 {
+  color: red;
+}
+
+table {
+  margin: auto;
+}
+
+td {
+  padding: 5px;
+}
+
+button {
+  margin-top: 10px;
+}
