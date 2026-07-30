@@ -1,0 +1,209 @@
+<div class="dashboard">
+
+  <!-- Welcome section -->
+  <section class="welcome-banner">
+
+    <div class="welcome-content">
+      <p class="small-text">STUDENT DASHBOARD</p>
+
+      <h1>Welcome back, {{ studentName }} 👋</h1>
+
+      <p>
+        Track your learning progress and continue your courses.
+      </p>
+
+      <button class="primary-btn" routerLink="/courses">
+        Explore Courses →
+      </button>
+    </div>
+
+    <div class="welcome-image">
+      <div class="student-icon">🎓</div>
+
+      <div>
+        <h3>{{ studentName }}</h3>
+        <p>Computer Science Student</p>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Statistics cards -->
+  <section class="stats-grid">
+
+    <div class="stat-card">
+      <div class="stat-icon blue">📚</div>
+
+      <div>
+        <p>Enrolled Courses</p>
+        <h2>{{ enrolledCount }}</h2>
+        <span>Currently learning</span>
+      </div>
+    </div>
+
+
+    <div class="stat-card">
+      <div class="stat-icon green">✓</div>
+
+      <div>
+        <p>Completed</p>
+        <h2>{{ completedCourses }}</h2>
+        <span>Courses finished</span>
+      </div>
+    </div>
+
+
+    <div class="stat-card">
+      <div class="stat-icon orange">📖</div>
+
+      <div>
+        <p>Available Courses</p>
+        <h2>{{ availableCourses }}</h2>
+        <span>Ready to explore</span>
+      </div>
+    </div>
+
+
+    <div class="stat-card">
+      <div class="stat-icon purple">📈</div>
+
+      <div>
+        <p>Overall Progress</p>
+        <h2>{{ progress }}%</h2>
+        <span>Keep learning!</span>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Main dashboard content -->
+  <section class="dashboard-content">
+
+    <!-- Progress -->
+    <div class="progress-card">
+
+      <div class="section-heading">
+        <div>
+          <h2>Learning Progress</h2>
+          <p>Your current course performance</p>
+        </div>
+
+        <span class="progress-value">{{ progress }}%</span>
+      </div>
+
+      <div class="progress-bar">
+        <div
+          class="progress-fill"
+          [style.width.%]="progress">
+        </div>
+      </div>
+
+      <div class="progress-details">
+
+        <div>
+          <strong>Java Programming</strong>
+          <span>80% completed</span>
+        </div>
+
+        <div>
+          <strong>Angular Development</strong>
+          <span>50% completed</span>
+        </div>
+
+      </div>
+
+      <button class="outline-btn" routerLink="/courses">
+        View My Courses
+      </button>
+
+    </div>
+
+
+    <!-- Quick actions -->
+    <div class="quick-card">
+
+      <h2>Quick Actions</h2>
+
+      <p>Access important pages quickly</p>
+
+      <a routerLink="/courses" class="quick-action">
+        <span class="action-icon">📚</span>
+
+        <div>
+          <strong>Browse Courses</strong>
+          <small>Explore all available courses</small>
+        </div>
+
+        <b>→</b>
+      </a>
+
+
+      <a routerLink="/enroll" class="quick-action">
+        <span class="action-icon">📝</span>
+
+        <div>
+          <strong>Enroll Now</strong>
+          <small>Join a new course</small>
+        </div>
+
+        <b>→</b>
+      </a>
+
+
+      <a routerLink="/profile" class="quick-action">
+        <span class="action-icon">👩‍🎓</span>
+
+        <div>
+          <strong>My Profile</strong>
+          <small>View and update your details</small>
+        </div>
+
+        <b>→</b>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- Recent activity -->
+  <section class="activity-card">
+
+    <div class="activity-header">
+
+      <div>
+        <h2>Recent Activity</h2>
+        <p>Your latest learning updates</p>
+      </div>
+
+      <button routerLink="/courses">
+        View Courses
+      </button>
+
+    </div>
+
+
+    <div
+      class="activity-item"
+      *ngFor="let activity of recentActivities">
+
+      <div class="activity-icon">
+        {{ activity.icon }}
+      </div>
+
+      <div class="activity-text">
+        <h3>{{ activity.title }}</h3>
+        <p>{{ activity.message }}</p>
+      </div>
+
+      <span class="activity-time">
+        {{ activity.time }}
+      </span>
+
+    </div>
+
+  </section>
+
+</div>

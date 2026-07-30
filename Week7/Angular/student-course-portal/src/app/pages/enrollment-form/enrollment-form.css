@@ -1,0 +1,324 @@
+* {
+  box-sizing: border-box;
+}
+
+.enrollment-page {
+  min-height: calc(100vh - 90px);
+  padding: 45px 7%;
+  background:
+    linear-gradient(
+      135deg,
+      #f4f8fc,
+      #eaf2f9
+    );
+  font-family: Arial, sans-serif;
+}
+
+.enrollment-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1150px;
+  min-height: 600px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 22px;
+  background: white;
+  box-shadow:
+    0 18px 50px
+    rgba(15, 76, 129, 0.16);
+}
+
+/* Left section */
+
+.info-section {
+  padding: 65px 55px;
+  background:
+    linear-gradient(
+      145deg,
+      #0f4c81,
+      #1d6da8
+    );
+  color: white;
+}
+
+.small-heading {
+  margin: 0 0 15px;
+  color: #bfe2ff;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.info-section h1 {
+  margin: 0;
+  font-size: 43px;
+  line-height: 1.2;
+}
+
+.info-text {
+  margin: 20px 0 40px;
+  color: #e0effb;
+  line-height: 1.7;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.benefit-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background:
+    rgba(255, 255, 255, 0.16);
+  font-size: 23px;
+}
+
+.benefit h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.benefit p {
+  margin: 0;
+  color: #d8ecfb;
+  font-size: 13px;
+}
+
+/* Right section */
+
+.form-section {
+  padding: 55px;
+  background: white;
+}
+
+.form-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.form-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: #e8f3fc;
+  font-size: 27px;
+}
+
+.form-heading h2 {
+  margin: 0;
+  color: #17324d;
+  font-size: 27px;
+}
+
+.form-heading p {
+  margin: 7px 0 0;
+  color: #718096;
+  font-size: 14px;
+}
+
+/* Inputs */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 21px;
+}
+
+.input-group label {
+  margin-bottom: 8px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  background: #fbfdff;
+  color: #334155;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #0f4c81;
+  box-shadow:
+    0 0 0 4px
+    rgba(15, 76, 129, 0.1);
+}
+
+.input-group input.ng-invalid.ng-touched,
+.input-group select.ng-invalid.ng-touched {
+  border-color: #e74c3c;
+}
+
+.error-message {
+  margin-top: 6px;
+  color: #e74c3c;
+  font-size: 12px;
+}
+
+/* Buttons */
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.enroll-button {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background:
+    linear-gradient(
+      90deg,
+      #0f4c81,
+      #2474ad
+    );
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.enroll-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 18px
+    rgba(15, 76, 129, 0.25);
+}
+
+.enroll-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.reset-button {
+  padding: 14px 25px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: white;
+  color: #475569;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Success */
+
+.success-section {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #16a34a;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.success-section h2 {
+  margin: 25px 0 10px;
+  color: #17324d;
+}
+
+.success-section > p {
+  color: #64748b;
+}
+
+.student-summary {
+  margin: 28px 0;
+  padding: 20px;
+  border-radius: 13px;
+  background: #f5f9fc;
+  text-align: left;
+}
+
+.student-summary p {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 0;
+  margin: 0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+.student-summary p:last-child {
+  border-bottom: none;
+}
+
+.student-summary span {
+  color: #64748b;
+  font-weight: bold;
+}
+
+.new-enrollment-button {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 10px;
+  background: #0f4c81;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+
+  .enrollment-container {
+    grid-template-columns: 1fr;
+  }
+
+  .info-section,
+  .form-section {
+    padding: 40px 30px;
+  }
+
+  .info-section h1 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .enrollment-page {
+    padding: 20px 4%;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .reset-button {
+    width: 100%;
+  }
+}

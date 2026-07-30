@@ -1,0 +1,171 @@
+<div class="profile-page">
+
+  <!-- Page heading -->
+  <div class="page-heading">
+    <div>
+      <p class="small-title">STUDENT DASHBOARD</p>
+      <h1>My Profile</h1>
+      <p class="subtitle">
+        View and manage your personal and academic information.
+      </p>
+    </div>
+
+    <button class="edit-btn" (click)="editProfile()">
+      {{ isEditing ? 'Cancel' : '✏ Edit Profile' }}
+    </button>
+  </div>
+
+  <!-- Profile information card -->
+  <div class="profile-card">
+
+    <div class="profile-top">
+
+      <div class="profile-image">
+        <span>S</span>
+      </div>
+
+      <div class="profile-main-info">
+        <h2>{{ student.name }}</h2>
+        <p>{{ student.department }}</p>
+
+        <div class="student-badges">
+          <span>🎓 {{ student.year }}</span>
+          <span>🟢 Active Student</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="profile-line"></div>
+
+    <!-- Normal view -->
+    <div class="details-grid" *ngIf="!isEditing">
+
+      <div class="detail-box">
+        <span class="detail-icon">✉</span>
+
+        <div>
+          <p>Email Address</p>
+          <h4>{{ student.email }}</h4>
+        </div>
+      </div>
+
+      <div class="detail-box">
+        <span class="detail-icon">📱</span>
+
+        <div>
+          <p>Phone Number</p>
+          <h4>{{ student.phone }}</h4>
+        </div>
+      </div>
+
+      <div class="detail-box">
+        <span class="detail-icon">🏫</span>
+
+        <div>
+          <p>College</p>
+          <h4>{{ student.college }}</h4>
+        </div>
+      </div>
+
+      <div class="detail-box">
+        <span class="detail-icon">📚</span>
+
+        <div>
+          <p>Department</p>
+          <h4>{{ student.department }}</h4>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Edit form -->
+    <div class="edit-form" *ngIf="isEditing">
+
+      <div class="input-group">
+        <label>Name</label>
+        <input type="text" [(ngModel)]="student.name">
+      </div>
+
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" [(ngModel)]="student.email">
+      </div>
+
+      <div class="input-group">
+        <label>Phone</label>
+        <input type="text" [(ngModel)]="student.phone">
+      </div>
+
+      <div class="input-group">
+        <label>College</label>
+        <input type="text" [(ngModel)]="student.college">
+      </div>
+
+      <button class="save-btn" (click)="saveProfile()">
+        ✓ Save Changes
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- Statistics -->
+  <div class="statistics">
+
+    <div class="stat-card">
+      <div class="stat-icon blue">📖</div>
+
+      <div>
+        <h2>{{ student.coursesEnrolled }}</h2>
+        <p>Courses Enrolled</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon green">✓</div>
+
+      <div>
+        <h2>{{ student.coursesCompleted }}</h2>
+        <p>Courses Completed</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon orange">🏆</div>
+
+      <div>
+        <h2>{{ student.certificates }}</h2>
+        <p>Certificates</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Learning progress -->
+  <div class="progress-card">
+
+    <div class="progress-heading">
+      <div>
+        <h2>Learning Progress</h2>
+        <p>Your overall course completion progress</p>
+      </div>
+
+      <h2 class="percentage">{{ student.progress }}%</h2>
+    </div>
+
+    <div class="progress-background">
+      <div
+        class="progress-bar"
+        [style.width.%]="student.progress">
+      </div>
+    </div>
+
+    <div class="progress-text">
+      <span>Completed {{ student.coursesCompleted }} courses</span>
+      <span>{{ student.coursesEnrolled - student.coursesCompleted }} courses remaining</span>
+    </div>
+
+  </div>
+
+</div>

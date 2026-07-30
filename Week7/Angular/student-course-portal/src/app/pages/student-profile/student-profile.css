@@ -1,0 +1,398 @@
+* {
+  box-sizing: border-box;
+}
+
+.profile-page {
+  min-height: 100vh;
+  padding: 40px 7%;
+  background: #f4f7fb;
+  color: #1f2937;
+  font-family: Arial, sans-serif;
+}
+
+/* Page heading */
+
+.page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.small-title {
+  margin: 0 0 8px;
+  color: #0f4c81;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.page-heading h1 {
+  margin: 0;
+  font-size: 34px;
+  color: #17324d;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: #6b7280;
+}
+
+.edit-btn {
+  padding: 13px 22px;
+  border: none;
+  border-radius: 9px;
+  background: #0f4c81;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.edit-btn:hover {
+  background: #083b67;
+  transform: translateY(-2px);
+}
+
+/* Main profile card */
+
+.profile-card {
+  padding: 30px;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 8px 25px rgba(15, 76, 129, 0.1);
+}
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #dbeafe;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0f4c81, #2874a6);
+  color: white;
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.profile-main-info h2 {
+  margin: 0;
+  color: #17324d;
+  font-size: 28px;
+}
+
+.profile-main-info p {
+  margin: 7px 0 12px;
+  color: #64748b;
+}
+
+.student-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.student-badges span {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #eef6ff;
+  color: #0f4c81;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.profile-line {
+  height: 1px;
+  margin: 28px 0;
+  background: #e5e7eb;
+}
+
+/* Student details */
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.detail-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fafcff;
+  transition: 0.3s;
+}
+
+.detail-box:hover {
+  border-color: #0f4c81;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(15, 76, 129, 0.1);
+}
+
+.detail-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #e8f2fb;
+  font-size: 21px;
+}
+
+.detail-box p {
+  margin: 0 0 6px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.detail-box h4 {
+  margin: 0;
+  color: #243b53;
+  overflow-wrap: anywhere;
+}
+
+/* Statistics cards */
+
+.statistics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin: 28px 0;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 23px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 6px 20px rgba(15, 76, 129, 0.08);
+  transition: 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(15, 76, 129, 0.15);
+}
+
+.stat-card h2 {
+  margin: 0;
+  color: #17324d;
+  font-size: 28px;
+}
+
+.stat-card p {
+  margin: 5px 0 0;
+  color: #6b7280;
+}
+
+.stat-icon {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 14px;
+  font-size: 24px;
+}
+
+.blue {
+  background: #e3f0ff;
+}
+
+.green {
+  background: #dcfce7;
+}
+
+.orange {
+  background: #fff1d6;
+}
+
+/* Learning progress */
+
+.progress-card {
+  padding: 28px;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 6px 20px rgba(15, 76, 129, 0.08);
+}
+
+.progress-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-heading h2 {
+  margin: 0;
+  color: #17324d;
+}
+
+.progress-heading p {
+  margin-bottom: 0;
+  color: #6b7280;
+}
+
+.percentage {
+  color: #0f4c81 !important;
+  font-size: 30px;
+}
+
+.progress-background {
+  width: 100%;
+  height: 13px;
+  overflow: hidden;
+  margin-top: 22px;
+  border-radius: 20px;
+  background: #e5e7eb;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #0f4c81, #3498db);
+  transition: width 0.8s ease;
+}
+
+.progress-text {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Edit form */
+
+.edit-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 7px;
+  color: #334155;
+  font-weight: bold;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #0f4c81;
+  box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.1);
+}
+
+.save-btn {
+  width: 180px;
+  padding: 13px;
+  border: none;
+  border-radius: 9px;
+  background: #0f4c81;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.save-btn:hover {
+  background: #083b67;
+  transform: translateY(-2px);
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+  .statistics {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-page {
+    padding: 30px 5%;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 750px) {
+
+  .profile-page {
+    padding: 25px 5%;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .page-heading h1 {
+    font-size: 28px;
+  }
+
+  .details-grid,
+  .edit-form {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card {
+    padding: 20px;
+  }
+
+  .profile-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .profile-image {
+    width: 80px;
+    height: 80px;
+    font-size: 34px;
+  }
+
+  .progress-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .progress-text {
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .save-btn {
+    width: 100%;
+  }
+}

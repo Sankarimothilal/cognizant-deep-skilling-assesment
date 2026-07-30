@@ -1,0 +1,249 @@
+<div class="enrollment-page">
+
+  <div class="enrollment-container">
+
+    <!-- Left information section -->
+
+    <div class="info-section">
+
+      <p class="small-heading">START YOUR LEARNING JOURNEY</p>
+
+      <h1>Enroll in a<br>New Course</h1>
+
+      <p class="info-text">
+        Learn new skills, improve your knowledge, and build your career
+        with our student learning portal.
+      </p>
+
+      <div class="benefit">
+
+        <div class="benefit-icon">📚</div>
+
+        <div>
+          <h3>Learn at Your Pace</h3>
+          <p>Access course materials whenever you want.</p>
+        </div>
+
+      </div>
+
+      <div class="benefit">
+
+        <div class="benefit-icon">🎯</div>
+
+        <div>
+          <h3>Build New Skills</h3>
+          <p>Improve your technical and professional skills.</p>
+        </div>
+
+      </div>
+
+      <div class="benefit">
+
+        <div class="benefit-icon">🏆</div>
+
+        <div>
+          <h3>Get Certificates</h3>
+          <p>Complete courses and earn certificates.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Form section -->
+
+    <div class="form-section">
+
+      <div *ngIf="!submitted">
+
+        <div class="form-heading">
+
+          <div class="form-icon">🎓</div>
+
+          <div>
+            <h2>Course Enrollment</h2>
+
+            <p>Enter your details to enroll in a course.</p>
+          </div>
+
+        </div>
+
+        <form #enrollForm="ngForm" (ngSubmit)="enroll()">
+
+          <!-- Name -->
+
+          <div class="input-group">
+
+            <label>Full Name</label>
+
+            <input
+              type="text"
+              name="name"
+              [(ngModel)]="student.name"
+              #name="ngModel"
+              placeholder="Enter your full name"
+              required
+            >
+
+            <small
+              class="error-message"
+              *ngIf="name.invalid && name.touched">
+
+              Please enter your name.
+
+            </small>
+
+          </div>
+
+          <!-- Email -->
+
+          <div class="input-group">
+
+            <label>Email Address</label>
+
+            <input
+              type="email"
+              name="email"
+              [(ngModel)]="student.email"
+              #email="ngModel"
+              placeholder="Enter your email address"
+              required
+              email
+            >
+
+            <small
+              class="error-message"
+              *ngIf="email.invalid && email.touched">
+
+              Enter a valid email address.
+
+            </small>
+
+          </div>
+
+          <!-- Course -->
+
+          <div class="input-group">
+
+            <label>Select Course</label>
+
+            <select
+              name="course"
+              [(ngModel)]="student.course"
+              #course="ngModel"
+              required
+            >
+
+              <option value="" disabled>
+                Choose a course
+              </option>
+
+              <option value="Java Programming">
+                Java Programming
+              </option>
+
+              <option value="Angular Development">
+                Angular Development
+              </option>
+
+              <option value="Spring Boot">
+                Spring Boot
+              </option>
+
+              <option value="React JS">
+                React JS
+              </option>
+
+              <option value="Microservices">
+                Microservices
+              </option>
+
+            </select>
+
+            <small
+              class="error-message"
+              *ngIf="course.invalid && course.touched">
+
+              Please select a course.
+
+            </small>
+
+          </div>
+
+          <!-- Buttons -->
+
+          <div class="button-group">
+
+            <button
+              type="submit"
+              class="enroll-button"
+              [disabled]="enrollForm.invalid">
+
+              Enroll Now →
+
+            </button>
+
+            <button
+              type="button"
+              class="reset-button"
+              (click)="resetForm()">
+
+              Reset
+
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- Success message -->
+
+      <div
+        class="success-section"
+        *ngIf="submitted">
+
+        <div class="success-icon">✓</div>
+
+        <h2>Enrollment Successful!</h2>
+
+        <p>
+          You have successfully enrolled in
+          <strong>{{ student.course }}</strong>.
+        </p>
+
+        <div class="student-summary">
+
+          <p>
+            <span>Name</span>
+            {{ student.name }}
+          </p>
+
+          <p>
+            <span>Email</span>
+            {{ student.email }}
+          </p>
+
+          <p>
+            <span>Course</span>
+            {{ student.course }}
+          </p>
+
+        </div>
+
+        <button
+          class="new-enrollment-button"
+          (click)="resetForm()">
+
+          Enroll in Another Course
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

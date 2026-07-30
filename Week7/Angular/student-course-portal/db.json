@@ -1,0 +1,49 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "Java Programming",
+      "duration": "8 Weeks",
+      "fee": 2500,
+      "description": "Learn Java fundamentals, OOP concepts, collections and exception handling."
+    },
+    {
+      "id": 2,
+      "name": "Angular Development",
+      "duration": "6 Weeks",
+      "fee": 3000,
+      "description": "Learn Angular components, routing, forms, services and dependency injection."
+    },
+    {
+      "id": 3,
+      "name": "Spring Boot",
+      "duration": "7 Weeks",
+      "fee": 2800,
+      "description": "Build REST APIs using Spring Boot, JPA and database integration."
+    },
+    {
+      "id": 4,
+      "name": "React JS",
+      "duration": "6 Weeks",
+      "fee": 2600,
+      "description": "Build interactive user interfaces using React components and hooks."
+    },
+    {
+      "id": 5,
+      "name": "Microservices",
+      "duration": "8 Weeks",
+      "fee": 3500,
+      "description": "Learn microservice architecture, service discovery and API gateway."
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "name": "Surya",
+      "department": "Computer Science",
+      "year": "IV",
+      "college": "PSNA College of Engineering and Technology"
+    }
+  ],
+  "enrollments": []
+}

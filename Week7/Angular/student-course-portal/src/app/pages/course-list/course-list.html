@@ -1,0 +1,69 @@
+<div class="courses-page">
+
+  <div class="course-banner">
+    <div>
+      <p class="small-title">EXPLORE AND LEARN</p>
+
+      <h1>Available Courses</h1>
+
+      <p>
+        Improve your skills and build your career with our
+        industry-focused courses.
+      </p>
+    </div>
+
+    <div class="banner-icon">
+      🎓
+    </div>
+  </div>
+
+  <div class="course-heading">
+
+    <div>
+      <h2>Choose Your Course</h2>
+      <p>Start learning and improve your technical skills.</p>
+    </div>
+
+    <div class="course-count">
+      {{ courses.length }} Courses
+    </div>
+
+  </div>
+
+  <div class="course-grid">
+
+    <div class="course-card" *ngFor="let course of courses">
+
+      <div class="course-icon">
+        {{ course.icon }}
+      </div>
+
+      <h2>{{ course.name }}</h2>
+
+      <p class="description">
+        {{ course.description }}
+      </p>
+
+      <div class="course-details">
+
+        <div>
+          <span>⏱ Duration</span>
+          <strong>{{ course.duration }}</strong>
+        </div>
+
+        <div>
+          <span>💰 Fee</span>
+          <strong>{{ course.fee | currency:'USD' }}</strong>
+        </div>
+
+      </div>
+
+      <button (click)="enrollCourse(course)">
+  Enroll Now →
+</button>
+
+    </div>
+
+  </div>
+
+</div>

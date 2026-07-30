@@ -1,0 +1,19 @@
+.navbar{
+  background:#0F4C81;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:bold;
+}
+
+.nav-links a:hover{
+  color:gold;
+}

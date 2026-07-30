@@ -1,0 +1,316 @@
+<div class="reactive-page">
+
+  <div class="reactive-container">
+
+    <!-- Header -->
+
+    <div class="reactive-header">
+
+      <div>
+
+        <p>REACTIVE FORMS</p>
+
+        <h1>Smart Course Enrollment</h1>
+
+        <span>
+          Angular Reactive Forms with
+          real-time validation
+        </span>
+
+      </div>
+
+      <div class="header-icon">
+        ⚡
+      </div>
+
+    </div>
+
+    <!-- Form -->
+
+    <div
+      class="reactive-form-card"
+      *ngIf="!submitted">
+
+      <div class="form-title">
+
+        <div class="number">
+          1
+        </div>
+
+        <div>
+
+          <h2>Student Information</h2>
+
+          <p>
+            Fill in your details to continue.
+          </p>
+
+        </div>
+
+      </div>
+
+      <form
+        [formGroup]="enrollmentForm"
+        (ngSubmit)="onSubmit()">
+
+        <!-- Name -->
+
+        <div class="form-control">
+
+          <label>
+            Full Name
+          </label>
+
+          <input
+            type="text"
+            formControlName="name"
+            placeholder="Enter your full name"
+          >
+
+          <small
+            class="error"
+            *ngIf="
+              name?.invalid &&
+              name?.touched
+            ">
+
+            <span
+              *ngIf="
+                name?.errors?.['required']
+              ">
+
+              Name is required.
+
+            </span>
+
+            <span
+              *ngIf="
+                name?.errors?.['minlength']
+              ">
+
+              Enter at least 3 characters.
+
+            </span>
+
+          </small>
+
+        </div>
+
+        <!-- Email -->
+
+        <div class="form-control">
+
+          <label>
+            Email Address
+          </label>
+
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="Enter your email"
+          >
+
+          <small
+            class="error"
+            *ngIf="
+              email?.invalid &&
+              email?.touched
+            ">
+
+            Enter a valid email address.
+
+          </small>
+
+        </div>
+
+        <!-- Course -->
+
+        <div class="form-control">
+
+          <label>
+            Select Course
+          </label>
+
+          <select
+            formControlName="course">
+
+            <option value="">
+              Choose your course
+            </option>
+
+            <option>
+              Java Programming
+            </option>
+
+            <option>
+              Angular Development
+            </option>
+
+            <option>
+              Spring Boot
+            </option>
+
+            <option>
+              React JS
+            </option>
+
+            <option>
+              Microservices
+            </option>
+
+          </select>
+
+          <small
+            class="error"
+            *ngIf="
+              course?.invalid &&
+              course?.touched
+            ">
+
+            Please select a course.
+
+          </small>
+
+        </div>
+
+        <!-- Progress -->
+
+        <div class="form-progress">
+
+          <div>
+
+            <span>
+              Form Completion
+            </span>
+
+            <strong>
+
+              {{
+                enrollmentForm.valid
+                ? '100%'
+                : 'In Progress'
+              }}
+
+            </strong>
+
+          </div>
+
+          <div class="progress-track">
+
+            <div
+              class="progress-value"
+              [class.complete]="
+                enrollmentForm.valid
+              ">
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Buttons -->
+
+        <div class="reactive-buttons">
+
+          <button
+            type="submit"
+            class="submit-reactive">
+
+            Complete Enrollment →
+
+          </button>
+
+          <button
+            type="button"
+            class="clear-reactive"
+            (click)="resetForm()">
+
+            Clear
+
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <!-- Success -->
+
+    <div
+      class="reactive-success"
+      *ngIf="submitted">
+
+      <div class="success-circle">
+        ✓
+      </div>
+
+      <h2>
+        Enrollment Completed!
+      </h2>
+
+      <p>
+        Your course enrollment was
+        successfully submitted.
+      </p>
+
+      <div class="result-card">
+
+        <div>
+
+          <span>
+            Student
+          </span>
+
+          <strong>
+            {{
+              enrollmentForm.value.name
+            }}
+          </strong>
+
+        </div>
+
+        <div>
+
+          <span>
+            Email
+          </span>
+
+          <strong>
+            {{
+              enrollmentForm.value.email
+            }}
+          </strong>
+
+        </div>
+
+        <div>
+
+          <span>
+            Course
+          </span>
+
+          <strong>
+            {{
+              enrollmentForm.value.course
+            }}
+          </strong>
+
+        </div>
+
+      </div>
+
+      <button
+        class="another-button"
+        (click)="resetForm()">
+
+        Add Another Enrollment
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
